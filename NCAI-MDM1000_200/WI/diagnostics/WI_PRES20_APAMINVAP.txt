@@ -1,0 +1,70 @@
+WARNING (theano.tensor.blas): Using NumPy C-API based implementation for BLAS functions.
+ -- Processing PRES20
+Traceback (most recent call last):
+  File "fiona/_shim.pyx", line 83, in fiona._shim.gdal_open_vector
+  File "fiona/_err.pyx", line 291, in fiona._err.exc_wrap_pointer
+fiona._err.CPLE_OpenFailedError: shapes/WI: No such file or directory
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "ei.py", line 129, in <module>
+    main()
+  File "/cluster/home/gschoe01/miniconda3/envs/fake-ensemble-analysis/lib/python3.8/site-packages/click/core.py", line 829, in __call__
+    return self.main(*args, **kwargs)
+  File "/cluster/home/gschoe01/miniconda3/envs/fake-ensemble-analysis/lib/python3.8/site-packages/click/core.py", line 782, in main
+    rv = self.invoke(ctx)
+  File "/cluster/home/gschoe01/miniconda3/envs/fake-ensemble-analysis/lib/python3.8/site-packages/click/core.py", line 1066, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/cluster/home/gschoe01/miniconda3/envs/fake-ensemble-analysis/lib/python3.8/site-packages/click/core.py", line 610, in invoke
+    return callback(*args, **kwargs)
+  File "ei.py", line 126, in main
+    run_ei(state, elec, g, num_tunes, num_draws, county, outdir)
+  File "ei.py", line 97, in run_ei
+    group_fractions, votes_fractions, precinct_pops, groups, candidate_names, run_id = create_processed_df(state, elec, g, county, outdir)
+  File "ei.py", line 17, in create_processed_df
+    df = gpd.read_file(info[state]["shapefile_path"])
+  File "/cluster/home/gschoe01/miniconda3/envs/fake-ensemble-analysis/lib/python3.8/site-packages/geopandas/io/file.py", line 160, in _read_file
+    with reader(path_or_bytes, **kwargs) as features:
+  File "/cluster/home/gschoe01/miniconda3/envs/fake-ensemble-analysis/lib/python3.8/site-packages/fiona/env.py", line 408, in wrapper
+    return f(*args, **kwargs)
+  File "/cluster/home/gschoe01/miniconda3/envs/fake-ensemble-analysis/lib/python3.8/site-packages/fiona/__init__.py", line 256, in open
+    c = Collection(path, mode, driver=driver, encoding=encoding,
+  File "/cluster/home/gschoe01/miniconda3/envs/fake-ensemble-analysis/lib/python3.8/site-packages/fiona/collection.py", line 162, in __init__
+    self.session.start(self, **kwargs)
+  File "fiona/ogrext.pyx", line 540, in fiona.ogrext.Session.start
+  File "fiona/_shim.pyx", line 90, in fiona._shim.gdal_open_vector
+fiona.errors.DriverError: shapes/WI: No such file or directory
+WARNING (theano.tensor.blas): Using NumPy C-API based implementation for BLAS functions.
+
+Making viz for PRES20 on ('APAMINVAP',)...
+Traceback (most recent call last):
+  File "viz.py", line 210, in <module>
+    main()
+  File "/cluster/home/gschoe01/miniconda3/envs/fake-ensemble-analysis/lib/python3.8/site-packages/click/core.py", line 829, in __call__
+    return self.main(*args, **kwargs)
+  File "/cluster/home/gschoe01/miniconda3/envs/fake-ensemble-analysis/lib/python3.8/site-packages/click/core.py", line 782, in main
+    rv = self.invoke(ctx)
+  File "/cluster/home/gschoe01/miniconda3/envs/fake-ensemble-analysis/lib/python3.8/site-packages/click/core.py", line 1066, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/cluster/home/gschoe01/miniconda3/envs/fake-ensemble-analysis/lib/python3.8/site-packages/click/core.py", line 610, in invoke
+    return callback(*args, **kwargs)
+  File "viz.py", line 193, in main
+    ei = pickle.load(open(f"{outdir}/{state+county_id}/ei/{run_id}.pickle", "rb"))
+FileNotFoundError: [Errno 2] No such file or directory: 'NCAI-MDM1000_200/WI/ei/WI_PRES20_APAMINVAP.pickle'
+WARNING (theano.tensor.blas): Using NumPy C-API based implementation for BLAS functions.
+Making summary for PRES20 on ('APAMINVAP',)
+Traceback (most recent call last):
+  File "summary.py", line 52, in <module>
+    main()
+  File "/cluster/home/gschoe01/miniconda3/envs/fake-ensemble-analysis/lib/python3.8/site-packages/click/core.py", line 829, in __call__
+    return self.main(*args, **kwargs)
+  File "/cluster/home/gschoe01/miniconda3/envs/fake-ensemble-analysis/lib/python3.8/site-packages/click/core.py", line 782, in main
+    rv = self.invoke(ctx)
+  File "/cluster/home/gschoe01/miniconda3/envs/fake-ensemble-analysis/lib/python3.8/site-packages/click/core.py", line 1066, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/cluster/home/gschoe01/miniconda3/envs/fake-ensemble-analysis/lib/python3.8/site-packages/click/core.py", line 610, in invoke
+    return callback(*args, **kwargs)
+  File "summary.py", line 35, in main
+    ei = pickle.load(open(f"{outdir}/{state+county_id}/ei/{run_id}.pickle", "rb"))
+FileNotFoundError: [Errno 2] No such file or directory: 'NCAI-MDM1000_200/WI/ei/WI_PRES20_APAMINVAP.pickle'

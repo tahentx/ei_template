@@ -1,0 +1,21 @@
+WARNING (theano.tensor.blas): Using NumPy C-API based implementation for BLAS functions.
+Auto-assigning NUTS sampler...
+Initializing NUTS using jitter+adapt_diag...
+Multiprocess sampling (4 chains in 4 jobs)
+NUTS: [b, phi, kappa]
+ -- Processing PRES20
+After dropping NA and 0-VAP, len df 2602 -> 2599
+    -- Scaled 17 precincts, for an increase of 5748 VAP
+Running ['APAMINVAP', 'OVAP'] x ['Joseph Biden', 'Donald Trump', 'None'] EI on PRES20
+r = 2 rows (demographic groups)
+c = 3 columns (candidates or voting outcomes)
+number of precincts = 2599
+█Sampling 4 chains for 1_000 tune and 1_000 draw iterations (4_000 + 4_000 draws total) took 27450 seconds.
+The rhat statistic is larger than 1.4 for some parameters. The sampler did not converge.
+The estimated number of effective samples is smaller than 200 for some parameters.
+Pareto scale: 1000, Pareto shape: 200
+WARNING (theano.tensor.blas): Using NumPy C-API based implementation for BLAS functions.
+
+Making viz for PRES20 on ('APAMINVAP',)...
+WARNING (theano.tensor.blas): Using NumPy C-API based implementation for BLAS functions.
+Making summary for PRES20 on ('APAMINVAP',)
